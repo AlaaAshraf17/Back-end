@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// Define schema to match MongoDB structure
+
 const productSchema = new mongoose.Schema({
   id: Number,
   name: String,
@@ -36,7 +36,6 @@ router.get('/', async (req, res) => {
   
 });
 
-// Change backend route to this
 router.get('/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
